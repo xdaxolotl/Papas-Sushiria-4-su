@@ -1,27 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
     <meta charset="UTF-8">
+    <title>papas suchiria</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ruffle on Vercel</title>
-    <!-- Ruffle CDN Script -->
     <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const ruffle = window.RufflePlayer.newest();
-            const embeds = document.querySelectorAll("embed");
-            embeds.forEach(embed => ruffle.createPlayer().load(embed));
-        });
-    </script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+        }
+        .container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .swf {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 <body>
-    <h1>Papa's Sushiria</h1>
-    <p>Play Papa's Sushiria</p>
-    <div>
-        <!-- Larger dimensions for the game -->
-        <embed src="papassushiria.swf" width="800" height="600">
-        <!-- Fallback for browsers that don't support the embed or Ruffle -->
-        <p>If the game doesn't load, please check your browser settings or try using a supported browser.</p>
+    <div class="container">
+        <div class="swf" dir="ltr" style="text-align: left;" trbidi="on">
+            <ruffle-embed src="papassushiria" type="application/x-shockwave-flash" width="100%" height="100%"></ruffle-embed>
+        </div>
     </div>
-</body>
-</html>
+
+
+</body></html>
